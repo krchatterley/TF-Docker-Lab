@@ -15,7 +15,7 @@ connection {
     timeout = "2m"
 }
 
-provisioner "remote-exec"
+provisioner "remote-exec" {
   inline = [
       "export PATH=$PATH:/usr/bin",
       # install docker
@@ -28,4 +28,5 @@ provisioner "remote-exec"
       "sudo apt install docker-ce",
       "sudo systemctl status docker"
   ]
+ }
 }
