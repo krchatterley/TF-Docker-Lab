@@ -26,6 +26,12 @@ provisioner "remote-exec" {
       "yes | sudo apt update",
       "yes | apt-cache policy docker-ce",
       "yes | sudo apt install docker-ce",
+      "yes | sudo docker volume create portainer_data",
+      "yes | sudo docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer",
+      "yes | sudo docker pull kalilinux/kali-linux-docker",
+      "yes | sudo docker run -t -i kalilinux/kali-linux-docker /bin/bash",
+      "yes | sudo apt-get update && apt-get install metasploit-framework",
+      "exit",
       "exit"
   ]
  }
