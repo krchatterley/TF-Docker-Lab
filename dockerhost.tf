@@ -26,7 +26,7 @@ provisioner "remote-exec" {
       "yes | sudo apt update",
       "yes | apt-cache policy docker-ce",
       "yes | sudo apt install docker-ce",
-      "sudo systemctl status docker"
+      "exit"
   ]
  }
 }
